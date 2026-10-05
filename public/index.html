@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>AI Content Generator</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        AI Content Generator
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Gemini AI
+      </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+
+      <div class="badge">
+        ✨ Powered by Gemini AI
+      </div>
+
+      <h1>
+        Create Content
+        <span>Faster with AI</span>
+      </h1>
+
+      <p>
+        Generate high-quality blog posts, summaries and social media
+        content in seconds using Google's Gemini AI.
+      </p>
+
+    </header>
+
+
+    <!-- Main Application -->
+    <main class="generator">
+
+      <!-- Input Card -->
+      <section class="card input-card">
+
+        <div class="card-heading">
+
+          <div>
+            <h2>Create Content</h2>
+
+            <p>
+              Choose a content type and describe what you need.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Content Type -->
+        <div class="form-group">
+
+          <label for="contentType">
+            Content Type
+          </label>
+
+          <div class="type-grid">
+
+            <button
+              type="button"
+              class="type-option active"
+              data-type="blog"
+            >
+              <span class="type-icon">📝</span>
+
+              <span>
+                <strong>Blog Post</strong>
+                <small>Detailed articles</small>
+              </span>
+            </button>
+
+
+            <button
+              type="button"
+              class="type-option"
+              data-type="summary"
+            >
+              <span class="type-icon">📋</span>
+
+              <span>
+                <strong>Summary</strong>
+                <small>Quick summaries</small>
+              </span>
+            </button>
+
+
+            <button
+              type="button"
+              class="type-option"
+              data-type="social"
+            >
+              <span class="type-icon">📱</span>
+
+              <span>
+                <strong>Social Media</strong>
+                <small>Captions & hashtags</small>
+              </span>
+            </button>
+
+          </div>
+
+          <!-- Hidden select kept for app.js -->
+          <select id="contentType" class="hidden-select">
+            <option value="blog">Blog Post</option>
+            <option value="summary">Summary</option>
+            <option value="social">Social Media</option>
+          </select>
+
+        </div>
+
+
+        <!-- Topic -->
+        <div class="form-group">
+
+          <div class="label-row">
+
+            <label for="topic">
+              Topic or Content
+            </label>
+
+            <span id="charCount">
+              0 / 500
+            </span>
+
+          </div>
+
+          <textarea
+            id="topic"
+            rows="7"
+            maxlength="500"
+            placeholder="Example: Benefits of artificial intelligence in education..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- Generate -->
+        <button
+          id="generateBtn"
+          class="generate-btn"
+        >
+          <span>✨</span>
+          Generate Content
+        </button>
+
+
+        <div id="loading" class="loading hidden">
+          <span class="spinner"></span>
+          Generating your content...
+        </div>
+
+
+        <div id="error" class="error hidden"></div>
+
+      </section>
+
+
+      <!-- Result Card -->
+      <section
+        id="resultSection"
+        class="card result-card hidden"
+      >
+
+        <div class="result-header">
+
+          <div>
+            <span class="result-label">
+              AI GENERATED
+            </span>
+
+            <h2>Your Content</h2>
+          </div>
+
+          <button
+            id="copyBtn"
+            class="copy-btn"
+          >
+            📋 Copy
+          </button>
+
+        </div>
+
+
+        <div id="result" class="result-content"></div>
+
+      </section>
+
+    </main>
+
+
+    <!-- Features -->
+    <section class="features">
+
+      <div class="feature">
+
+        <div class="feature-icon">⚡</div>
+
+        <div>
+          <h3>Fast Generation</h3>
+          <p>Generate content within seconds.</p>
+        </div>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🤖</div>
+
+        <div>
+          <h3>Gemini AI</h3>
+          <p>Powered by Google's AI technology.</p>
+        </div>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🔒</div>
+
+        <div>
+          <h3>Protected API</h3>
+          <p>Validation and rate limiting included.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+
+      <p>
+        Built with Node.js · Express · Gemini API
+      </p>
+
+    </footer>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
+```
