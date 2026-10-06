@@ -9,7 +9,7 @@ import { rateLimit } from "express-rate-limit";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -164,6 +164,12 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(PORT || 8080, () => {
-  console.log(`Server running on http://localhost:${process.env.PORT || 8080}`);
+app.listen(PORT || 5000, () => {
+  console.log(`Server running on http://localhost:${process.env.PORT || 5000}`);
 });
+
+// At the bottom of server.js:
+export default app; // If using ES Modules ("type": "module" in package.json)
+
+// OR if using CommonJS:
+// module.exports = app;
